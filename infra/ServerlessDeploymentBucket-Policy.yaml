@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  ProdAccount:
+    Type: String
+    Default: arn:aws:iam::200875118867:user/serverless-admin
+Resources:
+  ServerlessDeploymentBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Description: This policy allows access to this bucket for production account.
+    Properties:
+      Bucket: !ImportValue sls-image-storage-service-dev-ServerlessDeploymentBucketName
+      PolicyDocument:
+        Statement:
+          - Action:
+              - s3:*
+            Effect: Deny
+            Principal:
+              AWS:
+                - '*'
+            Resource:
+              - !Sub
+                - arn:aws:s3:::${ServerlessDeploymentBucketPolicy}
+                - {ServerlessDeploymentBucketPolicy: !ImportValue sls-image-storage-service-dev-ServerlessDeploymentBucketName}
+              - !Sub
+                - arn:aws:s3:::${ServerlessDeploymentBucketPolicy}/*
+                - {ServerlessDeploymentBucketPolicy: !ImportValue sls-image-storage-service-dev-ServerlessDeploymentBucketName}
+            Condition:
+              Bool:
+                'aws:SecureTransport': false
+          - Action:
+              - s3:GetObject
+            Effect: Allow
+            Principal:
+              AWS:
+                - !Ref ProdAccount
+            Resource:
+              - !Sub
+                - arn:aws:s3:::${ServerlessDeploymentBucketPolicy}
+                - { ServerlessDeploymentBucketPolicy: !ImportValue sls-image-storage-service-dev-ServerlessDeploymentBucketName }
+              - !Sub
+                - arn:aws:s3:::${ServerlessDeploymentBucketPolicy}/*
+                - { ServerlessDeploymentBucketPolicy: !ImportValue sls-image-storage-service-dev-ServerlessDeploymentBucketName }

@@ -1,0 +1,42 @@
+service: image-storage-service
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+  # you can overwrite defaults here
+  stage: prod
+  region: us-east-2
+  profile: prod-sls-admin-us-east-2
+
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "dynamodb:*"
+          Resource: !Join
+            - '/'
+            - - "arn:aws:dynamodb:${self:provider.region}:*:table"
+              - !ImportValue ImageDescriptionTable
+
+# you can add packaging information here
+package:
+  individually: true
+
+functions:
+  imageStorageService:
+    handler: handler.run
+    package:
+      artifact: s3://image-storage-service-de-serverlessdeploymentbuck-qs8sqey62914/serverless/image-storage-service/dev/1643791209378-2022-02-02T08:40:09.378Z/image-storage-service.zip
+    events:
+      - httpApi:
+          path: /image
+          method: '*'
+
+#    Define function environment variables here
+    environment:
+      DDB_TABLE: !ImportValue ImageDescriptionTable

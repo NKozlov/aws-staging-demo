@@ -1,0 +1,50 @@
+{
+  "version": "2.0",
+  "routeKey": "ANY /image",
+  "rawPath": "/image",
+  "rawQueryString": "",
+  "cookies": [
+    "_ym_uid=1629988640579093812"
+  ],
+  "headers": {
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    "accept-encoding": "gzip, deflate, br",
+    "accept-language": "ru,en;q=0.9",
+    "content-length": "0",
+    "dnt": "1",
+    "host": "psgbgaaat0.execute-api.us-east-2.amazonaws.com",
+    "sec-ch-ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\", \"Yandex\";v=\"22\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"macOS\"",
+    "sec-fetch-dest": "document",
+    "sec-fetch-mode": "navigate",
+    "sec-fetch-site": "none",
+    "sec-fetch-user": "?1",
+    "sec-gpc": "1",
+    "upgrade-insecure-requests": "1",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 YaBrowser/22.1.0.2500 Yowser/2.5 Safari/537.36",
+    "x-amzn-trace-id": "Root=1-61eef6d5-0507dedf0905ff9871faef18",
+    "x-forwarded-for": "37.110.86.197",
+    "x-forwarded-port": "443",
+    "x-forwarded-proto": "https"
+  },
+  "requestContext": {
+    "accountId": "310330112677",
+    "apiId": "psgbgaaat0",
+    "domainName": "psgbgaaat0.execute-api.us-east-2.amazonaws.com",
+    "domainPrefix": "psgbgaaat0",
+    "http": {
+      "method": "GET",
+      "path": "/image",
+      "protocol": "HTTP/1.1",
+      "sourceIp": "37.110.86.197",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 YaBrowser/22.1.0.2500 Yowser/2.5 Safari/537.36"
+    },
+    "requestId": "MduBaga4CYcEP1A=",
+    "routeKey": "ANY /image",
+    "stage": "$default",
+    "time": "24/Jan/2022:18:58:29 +0000",
+    "timeEpoch": 1643050709631
+  },
+  "isBase64Encoded": false
+}

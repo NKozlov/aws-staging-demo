@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  Stage:
+    Type: 'String'
+  StackName:
+    Type: 'String'
+Resources:
+  myTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "Author"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "Author"
+          KeyType: "HASH"
+      ProvisionedThroughput:
+        ReadCapacityUnits: "5"
+        WriteCapacityUnits: "5"
+      TableName: !Join
+        - '-'
+        - - 'ImageDescription'
+          - !Ref Stage
+      Tags:
+        - Key: 'app/service.name'
+          Value: 'ImageStorageService'
+        - Key: 'cf/stack.name'
+          Value: !Ref StackName
+Outputs:
+  StackName:
+    Value: !Ref StackName
+  Stage:
+    Value: !Ref Stage
+  TableName:
+    Value: !Ref 'myTable'
+    Export:
+      Name: 'ImageDescriptionTable'

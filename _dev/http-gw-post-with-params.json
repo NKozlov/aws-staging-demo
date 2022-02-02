@@ -1,0 +1,39 @@
+{
+  "version": "2.0",
+  "routeKey": "ANY /image",
+  "rawPath": "/image",
+  "rawQueryString": "",
+  "headers": {
+    "accept": "*/*",
+    "accept-encoding": "gzip, deflate, br",
+    "content-length": "54",
+    "content-type": "application/json",
+    "host": "psgbgaaat0.execute-api.us-east-2.amazonaws.com",
+    "postman-token": "e5d25ef2-9997-40d3-8dc9-e3aa7302f9da",
+    "user-agent": "PostmanRuntime/7.29.0",
+    "x-amzn-trace-id": "Root=1-61ef005b-51e0b9270ee928f51ffa227d",
+    "x-forwarded-for": "37.110.86.197",
+    "x-forwarded-port": "443",
+    "x-forwarded-proto": "https"
+  },
+  "requestContext": {
+    "accountId": "310330112677",
+    "apiId": "psgbgaaat0",
+    "domainName": "psgbgaaat0.execute-api.us-east-2.amazonaws.com",
+    "domainPrefix": "psgbgaaat0",
+    "http": {
+      "method": "POST",
+      "path": "/image",
+      "protocol": "HTTP/1.1",
+      "sourceIp": "37.110.86.197",
+      "userAgent": "PostmanRuntime/7.29.0"
+    },
+    "requestId": "Mdz-UiE1iYcEPQQ=",
+    "routeKey": "ANY /image",
+    "stage": "$default",
+    "time": "24/Jan/2022:19:39:07 +0000",
+    "timeEpoch": 1643053147473
+  },
+  "body": "{\n    \"Author\": \"Nikita Kozlov\",\n    \"DATE\": \"2022-02-02\"\n}",
+  "isBase64Encoded": false
+}

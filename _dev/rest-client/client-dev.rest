@@ -1,0 +1,17 @@
+###
+GET  https://{{api-gw}}.execute-api.us-east-2.amazonaws.com/image
+
+###
+GET  https://{{api-gw}}.execute-api.us-east-2.amazonaws.com/image?author=Nikita Kozlov
+
+###
+POST https://{{api-gw}}.execute-api.us-east-2.amazonaws.com/image
+Content-Type: application/json
+
+{
+  "Author": "Platform V",
+  "DATE": "2022-02-01"
+}
+
+
+
